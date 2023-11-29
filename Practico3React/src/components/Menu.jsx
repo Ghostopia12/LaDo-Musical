@@ -1,6 +1,6 @@
 import { Container, Nav, Navbar, Form, FormControl, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { NIVEL_CREATE_URL, HOME_URL, ACTIVIDAD_CREATE_URL, NIVEL_LIST_URL } from "../navigation/CONSTANTS";//LOGIN_URL
+import { NIVEL_CREATE_URL, HOME_URL, ACTIVIDAD_CREATE_URL, ACTIVIDAD1_JUGAR_URL } from "../navigation/CONSTANTS";//LOGIN_URL
 import { useState } from "react";
 import { buscarXNombre } from "../services";
 
@@ -50,14 +50,6 @@ export default function Menu () {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Form inline onSubmit={handleSearch}>
-                <FormControl
-                    type="text"
-                    placeholder="Buscar niveles"
-                    className="mr-sm-2"
-                    value={searchQuery}
-                    onChange={(event) => setSearchQuery(event.target.value)}
-                />
-                <Button variant="outline-primary" type="submit">Buscar</Button>
                 </Form>
                     <Nav className="me-auto">
                         <Link className="nav-link" to={HOME_URL}>Inicio</Link>
@@ -66,6 +58,8 @@ export default function Menu () {
  */}                        
          <Link className="nav-link" to={NIVEL_CREATE_URL}>Crear Nivel</Link>
         <Link className="nav-link" to={ACTIVIDAD_CREATE_URL}>Crear Actividad</Link>
+        <Link className="nav-link" to={'http://127.0.0.1:5173'+ACTIVIDAD1_JUGAR_URL}>Aprender a leer notas</Link>
+
                         <Link onClick={ logout }>
                             Cerrar sesión
                         </Link>

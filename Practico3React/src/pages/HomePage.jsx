@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { getListaNiveles, delNivel, getListaActividad, getNivelesXActividad, delActividad } from "../services";
 import { getAuthToken, validateLogin } from "../utilities/TokenUtilities";
 import {  useNavigate } from "react-router-dom";
-import { ACTIVIDAD_JUGAR_URL, NIVEL_EDIT_URL, ACTIVIDAD_EDIT_URL } from "../navigation/CONSTANTS";
+import {  NIVEL_EDIT_URL, ACTIVIDAD_EDIT_URL } from "../navigation/CONSTANTS";
 
 
 export default function HomePage(){
@@ -121,7 +121,6 @@ export default function HomePage(){
                                             deleteActividad(actividad.id)
                                     }}>Eliminar</Button>
                                     <Link to={'http://127.0.0.1:5173'+ACTIVIDAD_EDIT_URL+actividad.id}>Editar</Link>
-                                    <Link to={'http://127.0.0.1:5173'+ACTIVIDAD_JUGAR_URL+actividad.id}>Jugar</Link>
                                     <AdminActividadComponent owner={localStorage.getItem('is_admin')} actividad={actividad}/>
                                     </Navbar.Brand>
                                 </Container>
